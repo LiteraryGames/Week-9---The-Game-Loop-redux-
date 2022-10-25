@@ -17,6 +17,9 @@ public class ObjectManager : MonoBehaviour
         objectMover.ObjectsToMove = objects;
         objectMover.StartMovement();
         
+        // By putting this code in the Awake() method, we guarantee it will 
+        // happen prior to code in other Start() methods, like the code in 
+        // the MoveObjects script we're referencing
     }
     // Start is called before the first frame update
     void Start()

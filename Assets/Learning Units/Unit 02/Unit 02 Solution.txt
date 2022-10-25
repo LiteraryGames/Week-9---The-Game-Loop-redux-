@@ -1,0 +1,4 @@
+Unit 02 Solution
+
+The solution was to change the Script Execution Order in Edit > Project Settings so that
+the ObjectManager.cs component went first, then RotateObjects, then MoveObjects

@@ -17,7 +17,6 @@ public class MovementWatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveOneByOne.MoveNextObject();
     }
 
     // Update is called once per frame
@@ -33,6 +32,10 @@ public class MovementWatcher : MonoBehaviour
 
     void OnDisable()
     {
+        moveOneByOne.MoveNextObject();
+
+        // Because the MoveOneByOne script disables each object after it has gone a certain distance
+        // (Line 39 of MoveOneByOne), we want this method called in OnDisable() for each object
 
     }
     void OnApplicationQuit()

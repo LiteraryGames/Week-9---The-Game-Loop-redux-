@@ -17,6 +17,11 @@ public class SpaceOutObjects : MonoBehaviour
             objectsToSpaceOut[i].transform.position = new Vector3(i * 2f,0,0);
         }
 
+        // This "for loop" will space them out based on the value of the index i
+        // such that index 1 is 2f further along x than index 0, 
+        // index 2 is 4f further along x than index 0
+        // index 3 is 6f etc etc
+
         GetComponent<MoveObjects>().enabled = false;
     }
 

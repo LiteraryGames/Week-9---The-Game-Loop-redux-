@@ -23,8 +23,8 @@ public class MoveBackAndForth : MonoBehaviour
         endPositions = new List<Vector3>();
         foreach (GameObject thisObject in ObjectsToMove)
         {
-            startPositions.Add(thisObject.transform.position); // one of these lists needs this kind of position...
-            endPositions.Add(thisObject.transform.position + new Vector3(0, 0, 10f)); // another one needs another...
+            startPositions.Add(thisObject.transform.position); // We Add the original position to startPositions
+            endPositions.Add(thisObject.transform.position + new Vector3(0, 0, 10f)); // we add a position 10f away on Z to endPositions
         }
     }
 
@@ -35,6 +35,7 @@ public class MoveBackAndForth : MonoBehaviour
         for (int i = 0; i < ObjectsToMove.Count; i++)
         {
             ObjectsToMove[i].transform.position = Vector3.Lerp(startPositions[i], endPositions[i], lerpAmount);
+            // We lerp between these positions, referencing each position by the same index value i
         }
 
         //Don't change anything below here!
